@@ -616,3 +616,87 @@ body.productos-page {
 .fade-img.visible {
   opacity: 1;
 }
+/* --- SOLUCIÓN RESPONSIVE GENERAL Y CENTRADO --- */
+
+/* Evita scroll horizontal en todo el sitio */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Imágenes nunca más grandes que el contenedor */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Centra los recuadros de productos y ajusta ancho */
+.products-section,
+.products-slider-section {
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Ajusta los productos para móviles */
+@media (max-width: 768px) {
+  .product-item,
+  .products-slider-section .product-item {
+    max-width: 95vw;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0 auto 20px auto;
+    box-sizing: border-box;
+  }
+  .products-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 2vw;
+  }
+}
+
+/* Hero image responsive */
+.hero-image {
+  max-width: 98vw;
+  width: 100%;
+  height: auto;
+}
+
+/* Modal responsive */
+#modal-hero img {
+  max-width: 96vw !important;
+  max-height: 60vh !important;
+}
+
+/* Anuncio flotante responsive */
+#anuncio-float {
+  max-width: 98vw;
+  width: 728px;
+  min-width: 0;
+  left: auto;
+  right: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 800px) {
+  #anuncio-float {
+    width: 98vw;
+    min-width: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    top: 0;
+    height: 70px;
+  }
+}
+
+/* Centra el slider en móviles */
+.slider-container, .slider {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
