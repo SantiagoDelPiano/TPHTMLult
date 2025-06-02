@@ -1,0 +1,618 @@
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #C9A36E;
+  font-family: Arial, sans-serif;
+}
+
+/* ============================================
+   HEADER Y NAVEGACIÓN
+============================================ */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 40px;
+  background-color: #e3e3e3;
+  width: 100%;
+}
+
+.logo {
+  font-family: 'Papyrus', fantasy;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  margin-right: 80px;
+  flex-shrink: 0;
+}
+
+.navigation {
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navigation ul {
+  display: flex !important;
+  flex-direction: row;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item a {
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.nav-item a:hover {
+  background-color: #333;
+}
+
+/* ============================================
+   SECCIÓN HERO
+============================================ */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.hero-image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-text {
+  font-family: 'Papyrus', fantasy;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.hero-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   HERO OVERLAY (PÁGINA "SOBRE NOSOTROS")
+============================================ */
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-overlay .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay-text {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  font-family: 'Papyrus', fantasy;
+  font-size: 1.5rem;
+  max-width: 400px;
+  text-align: right;
+}
+
+/* ============================================
+   SLIDER Y SECCIÓN DE PRODUCTOS
+============================================ */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Para la sección de productos en el slider */
+.products-slider-section .product-item {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  border: 2px solid black;
+  background-color: white;
+  text-align: center;
+}
+
+.products-slider-section .product-item .image-container {
+  width: 100%;
+}
+
+.products-slider-section .product-item .image-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-description {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  color: #4a2c2a;
+  margin: 20px 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.products-heading {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* ============================================
+   (Si se utiliza grid de productos en otra vista)
+============================================ */
+.products-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin: 0 20px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  height: 600px;
+  border: 2px solid black;
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.product-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.unavailable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* ============================================
+   CONTENIDO PRINCIPAL (Imagen y Descripción)
+============================================ */
+.main-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+}
+
+.yellow-box {
+  width: 100%;
+  max-width: 960px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gray-box {
+  flex: 2;
+  max-width: 500px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.productos-page {
+  background-color: #7A1F2D;
+}
+/* Slide para productos agotados */
+.agotado-slide {
+  position: relative;
+  background: url('agotado.png') no-repeat center center;
+  background-size: cover;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agotado-slide .unavailable {
+  position: relative;
+  z-index: 2;
+  background-color: red;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+
+/* Esto va fuera y solo */
+.agotado-slide .product-title {
+  color: #fff;
+}
+
+.proximamente-slide {
+  position: relative;
+  background: url(proximamenteimagen.png) no-repeat center;
+  background-size: cover;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proximamente-slide .unavailable {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* ============================================
+   CONTACTO / FORMULARIO
+============================================ */
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 50px;
+  width: 100%;
+}
+
+.contact-image {
+  flex: 0 0 960px;
+}
+.contact-image img {
+  width: 960px;
+  height: 1080px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.contact-form {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+.contact-form.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form h2 {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  color: #4a2c2a;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+.contact-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* ============================
+   Diseño Adaptable para Móviles
+============================ */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+  .contact-image {
+    flex: none;
+  }
+  .contact-image img {
+    width: 100%;
+    height: auto;
+  }
+  .contact-form {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #e3e3e3;
+  color: black;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 2px solid black;
+}
+
+.footer p {
+  margin-bottom: 5px;
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #333;
+}
+
+/* ============================================
+   MEDIA QUERIES
+============================================ */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+  }
+  .logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .navigation ul {
+    flex-direction: row;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+  .nav-item a {
+    width: auto;
+    max-width: none;
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+  .main-content {
+    flex-direction: column;
+  }
+  .image-container,
+  .gray-box {
+    width: 100%;
+    height: auto;
+  }
+  .gray-box {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .products-section {
+    grid-template-columns: 1fr;
+    margin: 10px 15px;
+    gap: 25px;
+  }
+  .product-item {
+    height: auto;
+    padding: 15px;
+    width: 100%;
+  }
+  .footer {
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .footer a {
+    display: inline-block;
+    margin: 5px;
+  }
+  .hero-overlay {
+    height: auto;
+  }
+  .hero-overlay-text {
+    position: static;
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* En escritorio, muestra el menú y oculta el botón */
+@media (min-width: 769px) {
+  .navigation ul {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   ANUNCIO FLOTANTE 728x90px
+============================================ */
+#anuncio-float {
+  position: fixed;
+  top: 40px;
+  right: -728px;
+  width: 728px;
+  height: 90px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  border-radius: 10px 0 0 10px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.5s cubic-bezier(.77,0,.18,1);
+  overflow: hidden !important;
+}
+
+#anuncio-float.show {
+  right: 0;
+}
+
+#anuncio-float.hide {
+  right: -728px;
+}
+
+#anuncio-float iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: transparent;
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+#anuncio-float iframe::-webkit-scrollbar {
+  display: none !important;
+}
+
+#cerrar-anuncio {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #8b2f43;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+#cerrar-anuncio:hover {
+  background: #6a1f32;
+}
+
+/* Oculta el anuncio flotante en pantallas pequeñas para evitar scroll */
+@media (max-width: 728px) {
+  #anuncio-float {
+    display: none !important;
+  }
+}
+/* Animación fade para el carrusel del pop-in */
+.fade-img {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.fade-img.visible {
+  opacity: 1;
+}
